@@ -1,9 +1,18 @@
-import "./App.css";
+import "./assets/css/App.css";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import TaskBoard from "./components/TaskBoard";
 
 function App() {
   return (
     <>
-      <h1>Welcome to Tasker</h1>
+      <Header />
+      <div className="flex flex-col justify-center items-center">
+        <Hero />
+        <TaskBoard />
+      </div>
+      <Footer />
     </>
   );
 }
