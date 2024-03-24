@@ -1,5 +1,5 @@
 import { FaStar } from "react-icons/fa";
-const ListTask = ({ tasks, onEdit, onDelete }) => {
+const ListTask = ({ tasks, onEdit, onDelete, onFav }) => {
   return (
     <div className="overflow-auto">
       <table className="table-fixed overflow-auto xl:w-full">
@@ -34,11 +34,13 @@ const ListTask = ({ tasks, onEdit, onDelete }) => {
               key={task.id}
               className="border-b border-[#2E3443] [&>td]:align-baseline [&>td]:px-4 [&>td]:py-2">
               <td>
-                {task.isFavorite ? (
-                  <FaStar color="yellow" />
-                ) : (
-                  <FaStar color="gray" />
-                )}
+                <button onClick={() => onFav(task.id)}>
+                  {task.isFavorite ? (
+                    <FaStar color="yellow" />
+                  ) : (
+                    <FaStar color="gray" />
+                  )}
+                </button>
               </td>
               <td>{task.title}</td>
               <td>
